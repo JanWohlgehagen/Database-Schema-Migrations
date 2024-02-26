@@ -10,9 +10,5 @@ namespace Data
     {
         public Context? DbContext { get; set; }
 
-        public void Text()
-        {
-
-        }
     }
 }

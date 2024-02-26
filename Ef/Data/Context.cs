@@ -12,9 +12,15 @@ namespace Data
             var path = Environment.GetFolderPath(folder);
             DbPath = System.IO.Path.Join(path, "EShop.db");
         }
+        
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductRatings> ProductRatings { get; set; }
+
+        public DbSet<Category> categories { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlite($"Data Source={DbPath}");
-
+        
     }
 }
