@@ -19,7 +19,7 @@ To run the migrations you can use the specific migration name, to target the mig
 
 To Update : 
 ```
-dotnet ef update-database -migration 20240226114905_InitialCreate.cs
+dotnet ef database update 20240226114905_InitialCreate
 ```
 
 To Remove the last migration used : 
