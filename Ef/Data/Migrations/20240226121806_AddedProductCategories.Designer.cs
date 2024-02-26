@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240226121806_AddedProductCategories")]
+    partial class AddedProductCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
@@ -55,39 +58,6 @@ namespace Data.Migrations
                     b.ToTable("Products");
                 });
 
-
-            modelBuilder.Entity("Core.ProductRatings", b =>
-                {
-                    b.Property<int>("ProductRatingId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ProductIdId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Review")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ProductRatingId");
-
-                    b.HasIndex("ProductIdId");
-
-                    b.ToTable("ProductRatings");
-                });
-
-            modelBuilder.Entity("Core.ProductRatings", b =>
-                {
-                    b.HasOne("Core.Product", "ProductId")
-                        .WithMany()
-                        .HasForeignKey("ProductIdId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ProductId");
             modelBuilder.Entity("Core.Product", b =>
                 {
                     b.HasOne("Core.Category", "Category")
@@ -95,7 +65,6 @@ namespace Data.Migrations
                         .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
-                    
                 });
 #pragma warning restore 612, 618
         }
