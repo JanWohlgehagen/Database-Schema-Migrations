@@ -55,14 +55,13 @@ namespace Data.Migrations
                     b.ToTable("Products");
                 });
 
-
             modelBuilder.Entity("Core.ProductRatings", b =>
                 {
                     b.Property<int>("ProductRatingId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ProductIdId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Rating")
@@ -74,20 +73,11 @@ namespace Data.Migrations
 
                     b.HasKey("ProductRatingId");
 
-                    b.HasIndex("ProductIdId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductRatings");
                 });
 
-            modelBuilder.Entity("Core.ProductRatings", b =>
-                {
-                    b.HasOne("Core.Product", "ProductId")
-                        .WithMany()
-                        .HasForeignKey("ProductIdId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ProductId");
             modelBuilder.Entity("Core.Product", b =>
                 {
                     b.HasOne("Core.Category", "Category")
@@ -95,7 +85,17 @@ namespace Data.Migrations
                         .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
-                    
+                });
+
+            modelBuilder.Entity("Core.ProductRatings", b =>
+                {
+                    b.HasOne("Core.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

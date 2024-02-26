@@ -16,7 +16,7 @@ namespace Data.Migrations
                 {
                     ProductRatingId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ProductIdId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ProductId = table.Column<int>(type: "INTEGER", nullable: false),
                     Rating = table.Column<int>(type: "INTEGER", nullable: false),
                     Review = table.Column<string>(type: "TEXT", nullable: false)
                 },
@@ -24,17 +24,17 @@ namespace Data.Migrations
                 {
                     table.PrimaryKey("PK_ProductRatings", x => x.ProductRatingId);
                     table.ForeignKey(
-                        name: "FK_ProductRatings_Products_ProductIdId",
-                        column: x => x.ProductIdId,
+                        name: "FK_ProductRatings_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductRatings_ProductIdId",
+                name: "IX_ProductRatings_ProductId",
                 table: "ProductRatings",
-                column: "ProductIdId");
+                column: "ProductId");
         }
 
         /// <inheritdoc />

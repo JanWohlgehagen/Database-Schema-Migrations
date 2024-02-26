@@ -12,7 +12,7 @@ namespace Core
     {
         [Key]
         public int ProductRatingId { get; set; }
-        public required Product ProductId { get; set; }
+        public required Product Product { get; set; }
         public int Rating { get; set; }
         public required string Review { get; set; }
     }
