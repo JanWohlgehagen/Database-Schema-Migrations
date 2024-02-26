@@ -22,6 +22,11 @@ To Update :
 dotnet ef database update 20240226114905_InitialCreate
 ```
 
+Or alternatively to update one step at at time from your current migration history:
+```
+dotnet ef database update
+```
+
 To Remove the last migration used : 
 ```
 dotnet ef migrations remove --force
