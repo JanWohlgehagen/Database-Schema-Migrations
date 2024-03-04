@@ -1,5 +1,6 @@
 ﻿using Core;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace Data
 {
@@ -8,11 +9,26 @@ namespace Data
         public string DbPath { get; set; }
         public Context()
         {
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            DbPath = System.IO.Path.Join(path, "EShop.db");
+            var commonPath = "Database-Schema-Migrations\\Ef\\Data";
+            var projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName; // Get the project's root directory
+
+            if (projectDirectory != null)
+            {
+                var fullPath = Path.Combine(projectDirectory, commonPath);
+
+                // Create directory if it doesn't exist
+                Directory.CreateDirectory(fullPath);
+
+                DbPath = Path.Combine(fullPath, "EShop.db");
+            }
+            else
+            {
+                var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                var fullPath = Path.Combine(desktopPath, "EShop.db");
+                DbPath = fullPath;
+            }
         }
-        
+
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductRatings> ProductRatings { get; set; }

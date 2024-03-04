@@ -14,16 +14,33 @@ Example:
 20240226114905_InitialCreate.cs
 ```
 
-### Run Migrations 
-To run the migrations you can use the specific migration name, to target the migration you want as such : 
+### Run Migrations
+To migrate the database to the newest migration, run the following command: 
+
+To Update : 
+```
+dotnet ef database update
+```
+
+To run the migrations to a specific migration you can use the specific migration name - this can also be used to revert migrations, to target the migration run the following command: 
 
 To Update : 
 ```
 dotnet ef database update 20240226114905_InitialCreate
 ```
 
-To Remove the last migration used : 
+To Remove the last migration used AND DELETE THE FILE: 
 ```
 dotnet ef migrations remove --force
-``` 
+```
+
+### References
+EF Core documentation: https://learn.microsoft.com/en-us/ef/core/
+
+
+## Authors
+
+- [@Jan Wohlgehagen](https://github.com/JanWohlgehagen)
+- [@Simon Tved Nielsen](https://github.com/tadiaki)
+- [@Mikkel Theut Meier](https://github.com/theut94)
 
