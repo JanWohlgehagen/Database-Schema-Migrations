@@ -3,6 +3,24 @@
 
 In the entity framework project, 3 core entities has been introduced, with a data project to setup an SQLite database. There is an empty repo class, made for interaction for the database, through the context.
 
+## Setting up the project
+
+The project is a dotnet 7 project. You'll need to make sure everything runs in dotnet 7 for it to work. Therefore you might need to download dotnet 7 specifically. https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+
+### Cloning the project
+
+To clone the project run the following command:
+```
+git clone https://github.com/JanWohlgehagen/Database-Schema-Migrations/tree/ef-migrations/master
+```
+### Building the project
+Navigate to the Ef/Core folder and run the following command:
+```
+dotnet build 
+```
+
+There is no executeable files, so the project is not meant to be run. From here on, you can test the different migrations we have implemented, following the below guide.
+
 ## Entities
 Migrations are place in the data folder/project, in a migrations folder. The migration file contains both up and down for the current migration. They are named as such:
 ```
