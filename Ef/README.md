@@ -5,7 +5,7 @@ In the entity framework project, 3 core entities has been introduced, with a dat
 
 ## Setting up the project
 
-The project is a dotnet 7 project. You'll need to make sure everything runs in dotnet 7 for it to work. Therefore you might need to download dotnet 7 specifically. https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+The project is a dotnet 7 project. You'll need to make sure everything runs in dotnet 7 for it to work. Therefore you might need to download dotnet 7 specifically. 
 
 ### Cloning the project
 
@@ -68,7 +68,19 @@ dotnet ef migrations remove --force
 
 ## References
 EF Core documentation: https://learn.microsoft.com/en-us/ef/core/
+Dotnet 7 download: https://dotnet.microsoft.com/en-us/download/dotnet/7.0
 
+## Dependancies
+All dependancies for the project can be downloaded with the Nuget package manager.
+
+* Microsoft.EntityFrameworkCore version 7.0.16
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/7.0.16
+
+* Microsoft.EntityFrameworkCore.Sqlite version 7.0.16
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite/
+
+* Microsoft.EntityFrameworkCore.tools version 7.0.16
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools
 
 ## Authors
 
