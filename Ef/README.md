@@ -74,13 +74,16 @@ Dotnet 7 download: https://dotnet.microsoft.com/en-us/download/dotnet/7.0
 All dependancies for the project can be downloaded with the Nuget package manager.
 
 * Microsoft.EntityFrameworkCore version 7.0.16
+
 https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/7.0.16
 
 * Microsoft.EntityFrameworkCore.Sqlite version 7.0.16
-https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite/
+
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite/7.0.16
 
 * Microsoft.EntityFrameworkCore.tools version 7.0.16
-https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools
+
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/7.0.16
 
 ## Authors
 
